@@ -11,6 +11,9 @@ CUDA_VISIBLE_DEVICES=0,1  python dbgpt_hub/predict/predict.py \
     --finetuning_type lora \
     --checkpoint_dir dbgpt_hub/output/adapter/baichuan2-7b-sql-lora \
     --predicted_out_filename pred_sql.sql >> ${pred_log}
+    #--predicted_input_filename dbgpt_hub/data/example_text2sql_dev.json \
+    #--checkpoint_dir dbgpt_hub/output/adapter/CodeLlama-13b-sql-lora \
+    #--predicted_out_filename dbgpt_hub/output/pred/pred_codellama13b.sql >> ${pred_log}
 
 echo "############pred end###############" >>${pred_log}
 echo "pred End time: $(date)" >>${pred_log}
