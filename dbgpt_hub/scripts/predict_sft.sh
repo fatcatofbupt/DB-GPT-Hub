@@ -6,10 +6,10 @@ start_time=$(date +%s)
 echo " Pred Start time: $(date -d @$start_time +'%Y-%m-%d %H:%M:%S')" >>${pred_log}
 
 CUDA_VISIBLE_DEVICES=0,1  python dbgpt_hub/predict/predict.py \
-    --model_name_or_path Your_download_CodeLlama-13b-Instruct-hf_path \
-    --template llama2 \
+    --model_name_or_path /home/ubuntu/Dev/models/Baichuan2-7B-Chat \
+    --template baichuan2 \
     --finetuning_type lora \
-    --checkpoint_dir dbgpt_hub/output/adapter/CodeLlama-13b-sql-lora \
+    --checkpoint_dir dbgpt_hub/output/adapter/baichuan2-7b-sql-lora \
     --predicted_out_filename pred_sql.sql >> ${pred_log}
 
 echo "############pred end###############" >>${pred_log}
